@@ -14,23 +14,16 @@ protocol YCPopupMenuDelegate {
 }
 
 class YCPopupMenu: UIControl {
-    
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-    // Drawing code
-    }
-    */
-    
+
+    var delegate: YCPopupMenuDelegate?
+    var icons: Array<UIImage>!
+    var iconViews: Array<UIButton>!
+    var targetButton: UIButton!
+    var iconDistance: Double = 40
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-    
-    var delegate: YCPopupMenuDelegate?
-    var icons: Array<UIImage>!
-    var targetButton: UIButton!
-    
+
     init(frame: CGRect, target: UIButton, iconArray: Array<UIImage>) {
         super.init(frame: frame)
         self.icons = iconArray
@@ -51,7 +44,6 @@ class YCPopupMenu: UIControl {
         self.delegate?.popupMenu(self, didClickedAtIndex: index!)
     }
     
-    var iconViews: Array<UIButton>!
     func presentSubMenu() {
         
         var iconNumber: Double = 1
@@ -61,7 +53,7 @@ class YCPopupMenu: UIControl {
             iconView.setBackgroundImage(iconImage, forState: UIControlState.Normal)
             iconView.sizeToFit()
             iconView.tag = 1000 + Int(iconNumber)
-            iconView.center = CGPointMake(targetButton.center.x - CGFloat(40 * iconNumber), targetButton.center.y + CGFloat(40 * iconNumber))
+            iconView.center = CGPointMake(targetButton.center.x - CGFloat(iconDistance * iconNumber), targetButton.center.y + CGFloat(iconDistance * iconNumber))
             iconView.alpha = 0.0
             self.addSubview(iconView)
             iconViews.append(iconView)

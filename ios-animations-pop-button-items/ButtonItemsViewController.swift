@@ -19,6 +19,7 @@ class ButtonItemsViewController: UIViewController, YCPopupMenuDelegate {
     var popupMenu: YCPopupMenu!
     func addPopMenu() {
         popupMenu = YCPopupMenu(frame: self.view.frame, target: button, iconArray: icons)
+        popupMenu.iconDistance = 30
         self.view.addSubview(popupMenu)
         popupMenu.delegate = self
     }
