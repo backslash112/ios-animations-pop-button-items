@@ -9,35 +9,31 @@
 import UIKit
 import pop
 
-class ButtonItemsViewController: UIViewController {
+class ButtonItemsViewController: UIViewController, YCPopupMenuDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.addPopMenu()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    var popupMenu: YCPopupMenu!
+    func addPopMenu() {
+        popupMenu = YCPopupMenu(frame: self.view.frame, target: button, iconArray: icons)
+        self.view.addSubview(popupMenu)
+        popupMenu.delegate = self
     }
-    */
     
     var icons: Array<UIImage> = [UIImage(named: "downloadIcon")!, UIImage(named: "dribbbleIcon")!, UIImage(named: "twitterIcon")!]
-
-    @IBOutlet weak var button: UIButton!
     var isOpening = false
+    
+    @IBOutlet weak var button: UIButton!
+    @IBAction func clearButtonClicked(sender: AnyObject) {
+        popupMenu.dismiss()
+    }
     @IBAction func buttonClick(sender: AnyObject) {
+        popupMenu.presentSubMenu()
+        
+        /*
         if isOpening {
             for view in self.view.subviews {
                 if view.tag > 1000 {
@@ -70,5 +66,11 @@ class ButtonItemsViewController: UIViewController {
             iconNumber++
         }
         isOpening = true
+        */
+    }
+    
+    // MARK: - YCPopupMenuDelegate
+    func popupMenu(menu: YCPopupMenu, didClickedAtIndex index: Int) {
+        print(index)
     }
 }

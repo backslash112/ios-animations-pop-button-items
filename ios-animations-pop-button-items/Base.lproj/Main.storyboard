@@ -88,28 +88,43 @@
                                     <action selector="buttonClick:" destination="63g-p1-3Sw" eventType="touchUpInside" id="X9V-dz-BhN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6az-gh-SKf">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clearButtonClicked:" destination="63g-p1-3Sw" eventType="touchUpInside" id="crJ-dg-OFK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="6az-gh-SKf" firstAttribute="top" secondItem="SKu-fk-W3V" secondAttribute="bottom" constant="270" id="Klf-9t-Dpc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6az-gh-SKf" secondAttribute="trailing" constant="44" id="YY6-6P-Vbl"/>
                             <constraint firstItem="SKu-fk-W3V" firstAttribute="top" secondItem="OoN-4Z-gsN" secondAttribute="bottom" constant="54" id="hj6-aV-WDT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SKu-fk-W3V" secondAttribute="trailing" constant="39" id="li6-Af-JYi"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="SKu-fk-W3V"/>
+                                <exclude reference="6az-gh-SKf"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="hj6-aV-WDT"/>
                                 <exclude reference="li6-Af-JYi"/>
+                                <exclude reference="Klf-9t-Dpc"/>
+                                <exclude reference="YY6-6P-Vbl"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="SKu-fk-W3V"/>
+                                <include reference="6az-gh-SKf"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="hj6-aV-WDT"/>
                                 <include reference="li6-Af-JYi"/>
+                                <include reference="Klf-9t-Dpc"/>
+                                <include reference="YY6-6P-Vbl"/>
                             </mask>
                         </variation>
                     </view>

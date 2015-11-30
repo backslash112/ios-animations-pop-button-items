@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C3071C2F1C0C108D00B1C91A /* ButtonItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3071C2E1C0C108D00B1C91A /* ButtonItemsViewController.swift */; };
+		C3071C311C0C2D2200B1C91A /* YCPopupMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3071C301C0C2D2200B1C91A /* YCPopupMenu.swift */; };
 		C335FC151C0C0E91007D322F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C335FC141C0C0E91007D322F /* AppDelegate.swift */; };
 		C335FC171C0C0E91007D322F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C335FC161C0C0E91007D322F /* ViewController.swift */; };
 		C335FC1A1C0C0E91007D322F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C335FC181C0C0E91007D322F /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		601D715644B6BDFC4FD6CE57 /* Pods_ios_animations_pop_button_items.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_animations_pop_button_items.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DA6AAEDDA0EC44FA488FDCE /* Pods-ios-animations-pop-button-items.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-animations-pop-button-items.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-animations-pop-button-items/Pods-ios-animations-pop-button-items.release.xcconfig"; sourceTree = "<group>"; };
 		C3071C2E1C0C108D00B1C91A /* ButtonItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonItemsViewController.swift; sourceTree = "<group>"; };
+		C3071C301C0C2D2200B1C91A /* YCPopupMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YCPopupMenu.swift; sourceTree = "<group>"; };
 		C335FC111C0C0E91007D322F /* ios-animations-pop-button-items.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-animations-pop-button-items.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C335FC141C0C0E91007D322F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C335FC161C0C0E91007D322F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				C335FC1D1C0C0E91007D322F /* LaunchScreen.storyboard */,
 				C335FC201C0C0E91007D322F /* Info.plist */,
 				C3071C2E1C0C108D00B1C91A /* ButtonItemsViewController.swift */,
+				C3071C301C0C2D2200B1C91A /* YCPopupMenu.swift */,
 			);
 			path = "ios-animations-pop-button-items";
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3071C2F1C0C108D00B1C91A /* ButtonItemsViewController.swift in Sources */,
+				C3071C311C0C2D2200B1C91A /* YCPopupMenu.swift in Sources */,
 				C335FC171C0C0E91007D322F /* ViewController.swift in Sources */,
 				C335FC151C0C0E91007D322F /* AppDelegate.swift in Sources */,
 			);
