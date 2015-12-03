@@ -70,7 +70,7 @@ class YCPopupMenu: UIControl {
             let alpha = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
             alpha.toValue = 1.0
             alpha.duration = 0.2
-            alpha.beginTime = CACurrentMediaTime() + iconNumber * 0.02
+            alpha.beginTime = CACurrentMediaTime() + iconNumber * 0.04
             icon.pop_addAnimation(alpha, forKey: "alpha")
             iconNumber++
         }
