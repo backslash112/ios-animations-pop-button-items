@@ -20,6 +20,8 @@ class YCPopupMenu: UIControl {
     var iconViews: Array<UIButton>!
     var targetButton: UIButton!
     var iconDistance: Double = 40
+    var showShadow: Bool = false
+    var isOpening: Bool = false
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -44,8 +46,12 @@ class YCPopupMenu: UIControl {
         self.delegate?.popupMenu(self, didClickedAtIndex: index!)
     }
     
+    
     func presentSubMenu() {
-        
+        if isOpening {
+            return
+        }
+        isOpening = true
         var iconNumber: Double = 1
         iconViews = []
         for iconImage in self.icons {
@@ -64,11 +70,18 @@ class YCPopupMenu: UIControl {
             let alpha = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
             alpha.toValue = 1.0
             alpha.duration = 0.2
-            alpha.beginTime = CACurrentMediaTime() + iconNumber * 0.06
+            alpha.beginTime = CACurrentMediaTime() + iconNumber * 0.02
             icon.pop_addAnimation(alpha, forKey: "alpha")
             iconNumber++
         }
         self.setupAction()
+        if self.showShadow {
+            let view = UIView(frame: self.bounds)
+            view.backgroundColor = UIColor.blackColor()
+            view.alpha = 0.5
+            view.tag = 2000
+            self.insertSubview(view, atIndex: 0)
+        }
     }
     
     func dismiss() {
@@ -77,6 +90,7 @@ class YCPopupMenu: UIControl {
                 view.removeFromSuperview()
             }
         }
+        isOpening = false
     }
     
     func hide() {

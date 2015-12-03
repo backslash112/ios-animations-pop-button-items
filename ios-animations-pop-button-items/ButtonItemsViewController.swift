@@ -16,10 +16,16 @@ class ButtonItemsViewController: UIViewController, YCPopupMenuDelegate {
         self.addPopMenu()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
     var popupMenu: YCPopupMenu!
     func addPopMenu() {
         popupMenu = YCPopupMenu(frame: self.view.frame, target: button, iconArray: icons)
         popupMenu.iconDistance = 30
+        popupMenu.showShadow = true
         self.view.addSubview(popupMenu)
         popupMenu.delegate = self
     }
